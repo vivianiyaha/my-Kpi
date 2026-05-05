@@ -50,7 +50,7 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 # --- LOGO ---
-st.image("logo.png", width=150)
+st.image("logo.png", width=300)
 
 # --- DB SETUP ---
 conn = sqlite3.connect("recruitment.db", check_same_thread=False)
