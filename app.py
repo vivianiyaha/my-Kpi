@@ -3,6 +3,55 @@ import sqlite3
 import pandas as pd
 from datetime import datetime
 
+# --- PAGE CONFIG ---
+st.set_page_config(page_title="Recruitment Tracker", layout="wide")
+
+# --- CUSTOM CSS ---
+st.markdown("""
+<style>
+/* Main background */
+.stApp {
+    background-color: white;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #000000;
+    color: white;
+}
+
+/* Buttons */
+.stButton>button {
+    background-color: #FF6A00;
+    color: white;
+    border-radius: 8px;
+    border: none;
+}
+.stButton>button:hover {
+    background-color: #e65c00;
+    color: white;
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: #FF6A00;
+}
+
+/* Dataframe */
+[data-testid="stDataFrame"] {
+    background-color: white;
+}
+
+/* Metric */
+[data-testid="stMetricValue"] {
+    color: #FF6A00;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# --- LOGO ---
+st.image("logo.png", width=150)
+
 # --- DB SETUP ---
 conn = sqlite3.connect("recruitment.db", check_same_thread=False)
 c = conn.cursor()
